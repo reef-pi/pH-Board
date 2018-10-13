@@ -13,7 +13,7 @@ When soldering process is finished be sure to remove all short circuit and exces
 Be sure to clean accuratley the board from flux, specially around U1 & J2, it's special and critical opamp, no flux must be on this ic pins, or you will have problem with pH probe.
 J1 must be soldered closign the circuit on pH poistion or ORP position, depend from adapter usage.
 
-![connections picture](https://imgur.com/QEnsIkK)
+![connections picture](https://imgur.com/QEnsIkK.jpg)
 
 Address, basically the board has as address 0x40, up to 4 adapter can be used on same I2c bus, dip switch SW1 need to be set in according with software control system.
 
