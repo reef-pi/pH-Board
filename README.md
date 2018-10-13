@@ -13,7 +13,7 @@ When soldering process is finished be sure to remove all short circuit and exces
 Be sure to clean accuratley the board from flux, specially around U1 & J2, it's special and critical opamp, no flux must be on this ic pins, or you will have problem with pH probe.
 J1 must be soldered closign the circuit on pH poistion or ORP position, depend from adapter usage.
 
-![connections picture](https://i.imgur.com/EgzPYYY.jpg)
+![connections picture](https://imgur.com/QEnsIkK)
 
 Address, basically the board has as address 0x40, up to 4 adapter can be used on same I2c bus, dip switch SW1 need to be set in according with software control system.
 
@@ -26,6 +26,7 @@ on	    on	    0x43
 
 Testing
 Connect the board to RPI3, gnd (pin 39) +5V (pin 2) SDA1 (pin3) SCL1 (pin 5), be sure the address is 0x40 (SW1 off),be sure the I2C is enabled on Pi3, run i2cdetect (i2cdetect -y 1), the program must find the device at address 0x40, if not check the solder / connections. For a how to i suggest search with google "pi3 i2cdetect" or something like that, you find a lot of instructions.
+Note : if you need to connect more then one adapter all the other will be in parallel, signal by signal, but remember to change the address of each one.
 
 ![connections picture](https://imgur.com/1BIG9ph.jpg)
 
