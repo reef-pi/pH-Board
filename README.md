@@ -4,7 +4,7 @@ This repository conatins the design files for a standalone pH or ORP printed cir
 
 ![reef-pi pH board](/ph-board.jpeg)
 
-This board provieds features to manage typical pH or ORP probes. A signal amplifier, an analog to digital converter and an optoisolator circuit. This board provides the probe valuesT in a I2C Addressable bus interface.
+This board provieds features to read typical pH or ORP probes using signal amplifier, an analog to digital converter and an optoisolator circuit. This board provides the probe values via an I2C addressable bus interface.
 Schematic & PCB are created with Orcad 16, but pdf & gerber files are available if you don't have license for Orcad.
 
 An optocoupled system is not mandatory in an Aquarium, but too often there are splashes & leaks that can cause problems on measurements.  An optocoupled interface solves these problems.
@@ -45,13 +45,16 @@ If you read 32768 means out of range, something of wrong happen on analog part.
 
 - Base address 0x40
 - Init sequence 
-```code
+```
  write 0x40,0x06  //SW reset 
  write 0x40,0x40,0x06;  //set config reister continuos conversion, 90SPS
  write 0x40,0x08;   // start conversione
 ```
--loop to read value periodically:
- write 0x40,0x10 then read two bytes
+- Loop to read value periodically:
+```
+ write 0x40,0x10
+ read  // two bytes
+````
 
 ## LICENSE
 
